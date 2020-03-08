@@ -17,18 +17,14 @@ namespace TeamSelectie
 
 
 
-        public Strategy(IStrategyBehaviour strategyBehaviour, int numberOfDefenders, int numberOfMidFielders, int numberOfForwards, List<Player> teamList) :this(numberOfDefenders, numberOfMidFielders, numberOfForwards, teamList)
+        public Strategy(IStrategyBehaviour strategyBehaviour, int numberOfDefenders, int numberOfMidFielders, int numberOfForwards, List<Player> teamList) 
         {
             this.strategyBehaviour = strategyBehaviour;
-        }
-        protected Strategy(int numberOfDefenders, int numberOfMidFielders, int numberOfForwards, List<Player> teamList)
-        {
             this.numberOfDefenders = numberOfDefenders;
             this.numberOfMidFielders = numberOfMidFielders;
             this.numberOfForwards = numberOfForwards;
             this.teamList = teamList;
         }
-
         public List<Player> Select()
         {
             return strategyBehaviour.Select(teamList, numberOfDefenders, numberOfMidFielders, numberOfForwards);

@@ -6,11 +6,12 @@ namespace TeamSelectie
 {
     public class Selection
     {
-        //public IStrategy strategy;
-        public Selection()
+        public Selection(List<Player> ploeg)
         {
-            //MaakKapitein();
+            Ploeg = ploeg;
+            MaakKapitein();
         }
+
         public List<Player> Ploeg { get; set; }
         public void Controle(int value)
         {
@@ -32,17 +33,11 @@ namespace TeamSelectie
                 }
             }
             int index = Ploeg.IndexOf(kapitein);
-            Ploeg[index]._isKapitein = ($"{Ploeg[index].Naam} is de Kapitein");
+            Ploeg[index]._isKapitein = true;
         }
         public void IsGeblesseerd(Player p, string value)
         {
 
         }
-        //public void MaakSelectie(string formatie)
-        //{
-        //    string[] collectie = formatie.Split("-");
-        //    if (collectie.Length != 3)
-        //        throw new ArgumentException("niet goed ingevuld kut!");
-        //}
     }
 }

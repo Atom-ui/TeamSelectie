@@ -36,9 +36,14 @@ namespace TeamSelectie
             IStrategyBehaviour rotation = new RotationStrategy(4, 4, 2, t.Players, CapsOrderMethod);
 
 
+            
+
 
             Strategy strategy = new Strategy(standard, 4, 4, 2, t.Players);
             List<Player> eindlijst = strategy.Select();
+
+            Selection selection = new Selection(eindlijst);
+
             foreach (Player player in eindlijst)
             {
                 Console.WriteLine(player.ToString());

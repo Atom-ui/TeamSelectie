@@ -6,7 +6,7 @@ namespace TeamSelectie
 {
     public class Player : IPlayer
     {
-        public string _isKapitein;
+        public bool _isKapitein = false;
 
         public Player(string typeSpeler, string naam, int rugnummer, List<string> posities, int rating, int caps)
         {
@@ -53,7 +53,10 @@ namespace TeamSelectie
         }
         public override string ToString()
         {
-            return ($"{TypeSpeler}, {Naam}, {Rugnummer}, {Posities.Count}, {Rating}, {Caps}.");
+            if (_isKapitein == false)
+                return ($"{TypeSpeler}, {Naam}, {Rugnummer}, {Posities.Count}, {Rating}, {Caps}.");
+            else
+                return ($"{TypeSpeler}, {Naam}, {Rugnummer}, {Posities.Count}, {Rating}, {Caps} is de kapitein.");
         }
     }
 }
